@@ -3,7 +3,7 @@ const data = [
         id: 1,
         title: "Ca nau lau,nau mi mini",
         shopName: " Devang",
-        img: require("./assets/image/ca_nau_lau (1).png")
+        img: require("./assets/image/ca_nau_lau_1.png")
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ const data = [
         id: 5,
         title: "Lanh dao gian don",
         shopName: "Minh Long Book",
-        img: require("./assets/image/ca_nau_lau (1).png")
+        img: require("./assets/image/lanh_dao_gian_don.png")
     },
     {
         id: 6,
@@ -39,7 +39,7 @@ const data = [
         id: 7,
         title: "Donal trump thien tai lanh dao",
         shopName: "Minh Long Book",
-        img: require("./assets/image/trump 1.png")
+        img: require("./assets/image/trump_1.png")
     }
 ]
 export default data;

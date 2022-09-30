@@ -1,4 +1,4 @@
-import { FlatList, Image, SafeAreaView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 import data from './Data';
 
@@ -7,11 +7,11 @@ const Item = ({ item }) => (
   <View style={styles.item}>
     <Image source={item.img}></Image>
     <View style={styles.centerItem}>
-      <Text>{item.title}</Text>
-      <Text>Shop:{item.shopName}</Text>
+      <Text style={{ marginLeft: 10, fontWeight: "bold" }}>{item.title}</Text>
+      <Text style={{ marginLeft: 10 }}>Shop: {item.shopName}</Text>
     </View>
-    <TouchableOpacity style={{ backgroundColor: "red", borderRadius: 5 }}>
-      <Text>Chat</Text>
+    <TouchableOpacity style={styles.button}  >
+      <Text style={{ color: "white", fontSize: 15, fontWeight: "bold", marginTop: 10, textAlign: "center" }}>Chat</Text>
     </TouchableOpacity>
   </View>
 )
@@ -30,25 +30,41 @@ export default function App() {
       <FlatList
         data={DATA}
         renderItem={renderItem}
-        keyExtractor={item => item.id}>
+        keyExtractor={item => item.id}
+        style={styles.list}>
       </FlatList>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  list: {
+
+  },
   container: {
-    flex: 1
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+    backgroundColor: "#E5E5E5"
   },
   item: {
-    display: 'flex',
-    borderBottomColor: "gray",
-    borderTopColor: "gray",
-    backgroundColor: "green"
+    padding: 17,
+    marginVertical: 10,
+    marginHorizontal: 16,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    lineHeight: 20,
   },
   centerItem: {
     flex: 1,
-    fontSize: 14
+    flexDirection: 'column',
+    fontSize: 14,
+  },
+  button: {
+    backgroundColor: "red",
+    height: 45,
+    borderRadius: 5,
+    width: 70,
+    marginTop: 15
   }
 })
 
